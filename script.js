@@ -1,125 +1,135 @@
 ```javascript
-let progresso = 0;
+document.addEventListener("DOMContentLoaded", function () {
 
-const barra = document.getElementById("progresso");
-const texto = document.getElementById("texto");
+    // ===============================
+    // Carregamento
+    // ===============================
 
-const carregar = setInterval(() => {
+    let progresso = 0;
 
-    progresso++;
+    const barra = document.getElementById("progresso");
+    const texto = document.getElementById("texto");
+    const loading = document.getElementById("loading");
+    const conteudo = document.getElementById("conteudo");
 
-    barra.style.width = progresso + "%";
-    texto.innerHTML = progresso + "%";
+    const carregar = setInterval(() => {
 
-    if (progresso >= 100) {
+        progresso++;
 
-        clearInterval(carregar);
+        barra.style.width = progresso + "%";
+        texto.innerHTML = progresso + "%";
 
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("conteudo").style.display = "flex";
+        if (progresso >= 100) {
 
-        iniciarSistema();
+            clearInterval(carregar);
 
-    }
+            loading.style.display = "none";
+            conteudo.style.display = "flex";
 
-}, 35);
-
-
-// ===============================
-// Mensagens do sistema
-// ===============================
-
-const mensagens = [
-
-    "✔ Sistema inicializado...",
-    "✔ Analisando compatibilidade...",
-    "✔ Carregando coragem...",
-    "✔ Preparando pergunta para Ana...",
-    "✔ Pergunta pronta."
-
-];
-
-function iniciarSistema() {
-
-    let i = 0;
-
-    const titulo = document.getElementById("titulo");
-    const msg = document.getElementById("mensagem");
-
-    titulo.innerHTML = "Inicializando...";
-
-    function escrever() {
-
-        if (i < mensagens.length) {
-
-            msg.innerHTML += mensagens[i] + "<br>";
-
-            i++;
-
-            setTimeout(escrever, 900);
-
-        } else {
-
-            setTimeout(() => {
-
-                titulo.style.display = "none";
-                msg.style.display = "none";
-
-                document.getElementById("pergunta").style.display = "block";
-
-            }, 1200);
+            iniciarSistema();
 
         }
 
+    }, 35);
+
+
+    // ===============================
+    // Mensagens do sistema
+    // ===============================
+
+    const mensagens = [
+
+        "✔ Sistema inicializado...",
+        "✔ Analisando compatibilidade...",
+        "✔ Carregando coragem...",
+        "✔ Preparando pergunta para Ana...",
+        "✔ Pergunta pronta."
+
+    ];
+
+
+    function iniciarSistema() {
+
+        let i = 0;
+
+        const titulo = document.getElementById("titulo");
+        const msg = document.getElementById("mensagem");
+        const pergunta = document.getElementById("pergunta");
+
+        titulo.innerHTML = "Inicializando...";
+
+        function escrever() {
+
+            if (i < mensagens.length) {
+
+                msg.innerHTML += mensagens[i] + "<br>";
+
+                i++;
+
+                setTimeout(escrever, 900);
+
+            } else {
+
+                setTimeout(() => {
+
+                    titulo.style.display = "none";
+                    msg.style.display = "none";
+
+                    pergunta.style.display = "block";
+
+                }, 1200);
+
+            }
+
+        }
+
+        escrever();
+
     }
 
-    escrever();
 
-}
+    // ===============================
+    // Botão NÃO
+    // ===============================
 
+    const nao = document.getElementById("nao");
 
-// ===============================
-// Botão NÃO foge
-// ===============================
+    nao.addEventListener("mouseenter", function () {
 
-const nao = document.getElementById("nao");
+        const largura = window.innerWidth - nao.offsetWidth;
+        const altura = window.innerHeight - nao.offsetHeight;
 
-nao.addEventListener("mouseenter", () => {
+        const x = Math.random() * largura;
+        const y = Math.random() * altura;
 
-    const largura = window.innerWidth - 180;
-    const altura = window.innerHeight - 100;
+        nao.style.position = "fixed";
+        nao.style.left = x + "px";
+        nao.style.top = y + "px";
 
-    const x = Math.random() * largura;
-    const y = Math.random() * altura;
-
-    nao.style.position = "absolute";
-    nao.style.left = x + "px";
-    nao.style.top = y + "px";
-
-});
+    });
 
 
-// ===============================
-// Botão SIM
-// ===============================
+    // ===============================
+    // Botão SIM
+    // ===============================
 
-const sim = document.getElementById("sim");
+    const sim = document.getElementById("sim");
 
-sim.addEventListener("click", () => {
+    sim.addEventListener("click", function () {
 
-    document.getElementById("pergunta").innerHTML = `
+        const pergunta = document.getElementById("pergunta");
 
-        <p style="
-            font-size: 20px;
-            font-weight: bold;
-            line-height: 1.6;
-            text-align: center;
-        ">
-            Eu sei que sou irresistível kkkkkkk, só um aviso que te falo:
-            cuidado pra não se apaixonar. ❤️
-        </p>
+        pergunta.innerHTML = `
 
-    `;
+            <p class="mensagem-final">
+                Eu sei que sou irresistível kkkkkkk, só um aviso que te falo:
+                <br>
+                cuidado pra não se apaixonar. ❤️
+            </p>
+
+        `;
+
+    });
 
 });
 ```
