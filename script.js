@@ -1,3 +1,4 @@
+```javascript
 let progresso = 0;
 
 const barra = document.getElementById("progresso");
@@ -33,7 +34,7 @@ const mensagens = [
     "✔ Sistema inicializado...",
     "✔ Analisando compatibilidade...",
     "✔ Carregando coragem...",
-    "✔ Preparando pergunta...",
+    "✔ Preparando pergunta para Ana...",
     "✔ Pergunta pronta."
 
 ];
@@ -59,14 +60,11 @@ function iniciarSistema() {
 
         } else {
 
-            // Espera um pouco
             setTimeout(() => {
 
-                // Esconde as mensagens
                 titulo.style.display = "none";
                 msg.style.display = "none";
 
-                // Mostra a foto e a pergunta
                 document.getElementById("pergunta").style.display = "block";
 
             }, 1200);
@@ -105,36 +103,23 @@ nao.addEventListener("mouseenter", () => {
 // Botão SIM
 // ===============================
 
-document.getElementById("sim").addEventListener("click", () => {
+const sim = document.getElementById("sim");
 
-    document.body.innerHTML = `
+sim.addEventListener("click", () => {
 
-    <div style="
-        background:#111;
-        height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        flex-direction:column;
-        color:white;
-        font-family:Arial;
-        text-align:center;
-    ">
+    document.getElementById("pergunta").innerHTML = `
 
-        <h1 style="font-size:70px;">❤️</h1>
-
-        <h1>Sabia que você ia aceitar!</h1>
-
-        <p style="font-size:28px;margin-top:20px;">
-            Eu sei que sou irresistível Karina! kkkkkkkkk
+        <p style="
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.6;
+            text-align: center;
+        ">
+            Eu sei que sou irresistível kkkkkkk, só um aviso que te falo:
+            cuidado pra não se apaixonar. ❤️
         </p>
-
-        <h2 style="margin-top:40px;">
-            - Pavanelli
-        </h2>
-
-    </div>
 
     `;
 
 });
+```
