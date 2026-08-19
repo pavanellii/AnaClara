@@ -3,78 +3,57 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Para a Ana ❤️</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<div id="loading">
+    <div id="loading">
 
-    <h1>Inicializando sistema...</h1>
+        <h1>Inicializando sistema...</h1>
 
-    <div id="barra">
+        <div id="barra">
+            <div id="progresso"></div>
+        </div>
 
-        <div id="progresso"></div>
+        <p id="texto">0%</p>
 
     </div>
 
-    <p id="texto">0%</p>
 
-</div>
+    <div id="conteudo">
 
+        <h1 id="titulo">Uma coisinha para você...</h1>
 
-<div id="conteudo">
+        <p id="mensagem"></p>
 
-    <h1 id="titulo">Uma coisinha para você...</h1>
+        <div id="pergunta">
 
-    <p id="mensagem"></p>
+            <img src="foto.jpg" id="foto" alt="Ana">
 
-    <div id="pergunta">
+            <h2>
+                Ana, vamos continuar se falando e se conhecendo? ❤️
+            </h2>
 
-        <img src="foto.jpg" id="foto">
+            <div class="botoes">
 
-        <h2>
-            Ana, vamos continuar se falando e se conhecendo? ❤️
-        </h2>
+                <button id="sim">SIM ❤️</button>
 
-        <div class="botoes">
+                <button id="nao">Não, te odeio</button>
 
-            <button id="sim">SIM ❤️</button>
-
-            <button id="nao">Não, te odeio</button>
+            </div>
 
         </div>
 
     </div>
 
-</div>
 
-
-<script src="script.js"></script>
-
-<script>
-
-document.getElementById("sim").addEventListener("click", function() {
-
-    document.getElementById("pergunta").innerHTML = `
-
-        <p style="font-size: 20px; font-weight: bold; line-height: 1.6;">
-            Eu sei que sou irresistível kkkkkkk, só um aviso que te falo:
-            cuidado pra não se apaixonar. ❤️
-        </p>
-
-    `;
-
-});
-
-</script>
+    <script src="script.js"></script>
 
 </body>
 
