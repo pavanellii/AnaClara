@@ -1,155 +1,210 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
-    background:#111;
-    color:white;
-    font-family:Arial, Helvetica, sans-serif;
-    overflow:hidden;
-    text-align:center;
-
+body {
+    background: #111;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    text-align: center;
 }
 
-#loading{
 
-    width:100%;
-    height:100vh;
+/* ===============================
+   CARREGAMENTO
+   =============================== */
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+#loading {
+    width: 100%;
+    height: 100vh;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 20px;
 }
 
-#barra{
-
-    width:450px;
-    height:30px;
-
-    background:#333;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    margin:25px;
-
+#loading h1 {
+    font-size: 32px;
 }
 
-#progresso{
+#barra {
+    width: min(450px, 85vw);
+    height: 30px;
 
-    width:0%;
+    background: #333;
 
-    height:100%;
+    border-radius: 20px;
+    overflow: hidden;
 
-    background:#00ff88;
-
-    transition:.04s;
-
+    margin: 25px;
 }
 
-#texto{
+#progresso {
+    width: 0%;
+    height: 100%;
 
-    font-size:22px;
+    background: #00ff88;
 
+    transition: 0.04s;
 }
 
-#conteudo{
-
-    display:none;
-
-    width:100%;
-    height:100vh;
-
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-
+#texto {
+    font-size: 22px;
 }
 
-#titulo{
 
-    margin-top:70px;
-    font-size:45px;
+/* ===============================
+   CONTEÚDO
+   =============================== */
 
+#conteudo {
+    display: none;
+
+    width: 100%;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 20px;
 }
 
-#mensagem{
-
-    margin-top:40px;
-
-    color:#00ff88;
-
-    font-size:28px;
-
-    line-height:45px;
-
-    min-height:250px;
-
+#titulo {
+    margin-top: 30px;
+    font-size: 45px;
 }
 
-#pergunta{
+#mensagem {
+    margin-top: 40px;
 
-    display:none;
+    color: #00ff88;
 
+    font-size: 28px;
+
+    line-height: 45px;
+
+    min-height: 250px;
 }
 
-#foto{
 
-    width:260px;
-    height:260px;
+/* ===============================
+   PERGUNTA
+   =============================== */
 
-    object-fit:cover;
-
-    border-radius:20px;
-
-    border:5px solid #00ff88;
-
-    box-shadow:0 0 30px #00ff88;
-
-    margin-bottom:30px;
-
+#pergunta {
+    display: none;
 }
 
-h2{
+#foto {
+    width: 260px;
+    height: 260px;
 
-    margin-bottom:30px;
+    object-fit: cover;
 
+    border-radius: 20px;
+
+    border: 5px solid #00ff88;
+
+    box-shadow: 0 0 30px #00ff88;
+
+    margin-bottom: 30px;
 }
 
-button{
-
-    padding:15px 35px;
-
-    font-size:22px;
-
-    border:none;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    margin:20px;
-
+h2 {
+    margin-bottom: 30px;
 }
 
-#sim{
 
-    background:#00c853;
+/* ===============================
+   BOTÕES
+   =============================== */
 
-    color:white;
+button {
+    padding: 15px 35px;
 
+    font-size: 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    margin: 20px;
 }
 
-#nao{
+#sim {
+    background: #00c853;
+    color: white;
+}
 
-    background:#d50000;
+#nao {
+    background: #d50000;
+    color: white;
+}
 
-    color:white;
+
+/* ===============================
+   MENSAGEM FINAL
+   =============================== */
+
+.mensagem-final {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.7;
+
+    max-width: 600px;
+
+    padding: 30px;
+
+    color: white;
+}
+
+
+/* ===============================
+   CELULAR
+   =============================== */
+
+@media (max-width: 600px) {
+
+    #loading h1 {
+        font-size: 24px;
+    }
+
+    #titulo {
+        font-size: 30px;
+    }
+
+    #mensagem {
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    #foto {
+        width: 200px;
+        height: 200px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+
+    .mensagem-final {
+        font-size: 20px;
+    }
 
 }
+```
